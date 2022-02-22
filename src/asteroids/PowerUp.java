@@ -3,10 +3,7 @@ import java.awt.geom.Rectangle2D;
 import processing.core.*;
 import java.util.Random;
 
-/**
- *
- * @author Zachary Stewart
- */
+
 class PowerUp extends SpaceThing {
     private int type;
     Random rand = new Random();
@@ -24,7 +21,6 @@ class PowerUp extends SpaceThing {
         this.type = type;
     }
 
-    @Override
     public void draw() {
         super.draw();
         canvas.pushMatrix();

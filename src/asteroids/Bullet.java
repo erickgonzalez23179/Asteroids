@@ -2,10 +2,7 @@ package asteroids;
 import java.awt.geom.Rectangle2D;
 import processing.core.*;
 
-/**
- *
- * @author Zachary Stewart
- */
+
 class Bullet extends SpaceThing {
     private boolean active = false;
 
@@ -21,7 +18,7 @@ class Bullet extends SpaceThing {
         deltaY = PApplet.sin(PApplet.radians(direction-90)) * speed;
     }
 
-    @Override
+
     public void draw() {
         super.draw();
         canvas.pushMatrix();
@@ -50,7 +47,6 @@ class Bullet extends SpaceThing {
         canvas.popMatrix();
     }
 
-    @Override
     public void update() {
         distance += speed;
         super.update();
@@ -68,7 +64,7 @@ class Bullet extends SpaceThing {
         return active;
     }
 
-    @Override
+
     public void explode() {
         explode = true;
         remove = true;

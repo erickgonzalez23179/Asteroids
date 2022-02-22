@@ -4,10 +4,7 @@ import java.awt.*;
 import java.awt.geom.Rectangle2D;
 import java.util.Random;
 
-/**
- *
- * @author Zachary Stewart
- */
+
 public class Asteroid extends SpaceThing {
     int points;
     int generation;
@@ -73,7 +70,7 @@ public class Asteroid extends SpaceThing {
      * when going of the screen at any side, it reappears on the opposite
      * side.
      */
-    @Override
+
     public void update() {
         int dx;
         int dy;
@@ -101,7 +98,7 @@ public class Asteroid extends SpaceThing {
      * This loops through all points on the polygon and draws them as
      * a processing shape. Then it calls the update method.
      */
-    @Override
+
     public void draw() {
         super.draw();
         canvas.noFill();
@@ -117,8 +114,6 @@ public class Asteroid extends SpaceThing {
 
     /**
      * This checks for Asteroid collisions with Ships and Bullets.
-     * @param other
-     * @return
      */
     public boolean collides(Object other) {
         if(other instanceof Bullet && poly.intersects(((Bullet) other).getBounds())) {
@@ -138,7 +133,6 @@ public class Asteroid extends SpaceThing {
         return poly.contains(xPoint, yPoint);
     }
 
-    @Override
     public void explode() {
         if(generation > 1) {
             createable = new SpaceThing[2];

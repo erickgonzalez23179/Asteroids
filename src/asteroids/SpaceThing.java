@@ -2,10 +2,7 @@ package asteroids;
 import java.awt.geom.Rectangle2D;
 import processing.core.*;
 
-/**
- *
- * @author Zachary Stewart
- */
+
 abstract class SpaceThing {
     protected PApplet canvas;
     protected int frame = 0;
@@ -31,7 +28,6 @@ abstract class SpaceThing {
 
     /**
      * Set the game canvas for all subclasses
-     * @param papp
      */
     public SpaceThing(PApplet papp) {
         canvas = papp;
@@ -39,15 +35,14 @@ abstract class SpaceThing {
 
     /**
      * This is the amount this SpaceThingw will move along the x-axis each frame
-     * @return
      */
     public float deltaX() {
         return (PApplet.cos(PApplet.radians(direction-90)) * speed);
     }
 
     /**
-     * this is the ammount it will move along the y-axis each frame.
-     * @return
+     * this is the amount it will move along the y-axis each frame.
+
      */
     public float deltaY() {
         return (PApplet.sin(PApplet.radians(direction-90)) * speed);
@@ -60,7 +55,6 @@ abstract class SpaceThing {
      * is for debugging collisions.
      */
     public void draw() {
-//        drawGhost();
         frame += 1;
     }
 
@@ -93,7 +87,6 @@ abstract class SpaceThing {
     /**
      * Initiate a collision between this and other. decides the outcome of a collision.
      * Rock paper scissors logic.
-     * @param other
      */
     public void collide(SpaceThing other) {
         if (this instanceof Asteroid && other instanceof Ship) {
@@ -138,7 +131,6 @@ abstract class SpaceThing {
 
     /**
      * returns this objects bounds.
-     * @return
      */
     public Rectangle2D getBounds() {
         return bounds;

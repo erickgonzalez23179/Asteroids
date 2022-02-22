@@ -2,10 +2,7 @@ package asteroids;
 import java.awt.geom.Rectangle2D;
 import processing.core.*;
 
-/**
- *
- * @author Zachary Stewart
- */
+
 class Nuke extends SpaceThing {
     private boolean active = false;
     private float destinationX;
@@ -39,7 +36,7 @@ class Nuke extends SpaceThing {
         bounds = new Rectangle2D.Float(locationX, locationY, size*2, size*2);
     }
 
-    @Override
+
     public void draw() {
         super.draw();
         canvas.pushMatrix();
@@ -113,7 +110,6 @@ class Nuke extends SpaceThing {
     /**
      * The follow two methods return the coordinates for Nuke target,
      * whether space or Asteroid
-     * @return
      */
     public float getDestinationX() {
         if(target instanceof SpaceThing) {
@@ -133,7 +129,6 @@ class Nuke extends SpaceThing {
 
     /**
      * how far the missile has traveled.
-     * @return
      */
 
     public float getDistance() {

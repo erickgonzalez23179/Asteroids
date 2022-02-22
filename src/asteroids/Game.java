@@ -1,7 +1,4 @@
-/*
- * ]Asteroids clone by Zachary Stewart
- *
- */
+
 
 package asteroids;
 
@@ -45,11 +42,8 @@ class Game {
     final int MENU = 0;
     final int PLAYING = 1;
     final int GAMEOVER = 2;
-    /**
-     *
-     * @param papp Main PApplet of game.
-     *
-     */
+
+
     public Game(PApplet papp) {
         canvas = papp;
     }
@@ -58,9 +52,7 @@ class Game {
         gameState = MENU;
     }
 
-    /**
-     * Resets all object lists, scores, etc and inits level 1.
-     */
+
     public void newGame() {
         spaceThings = new LinkedList();
         createables = new LinkedList();
@@ -80,7 +72,6 @@ class Game {
 
     /**
      * Creates a level with newLeveL + 2 ships
-     * @param newLevel
      */
     public void initLevel(int newLevel) {
         level = newLevel;
@@ -92,7 +83,6 @@ class Game {
     /**
      * Creates Ships, Asteroids, Bullets, etc and adds them to the main
      * object list.
-     * @param thing type of SpaceThing. Ship, Asteroid or Bullet
      */
     public void createThing(int thing) {
         li = spaceThings.listIterator();
@@ -108,7 +98,6 @@ class Game {
 
     /**
      * Removes thing from object list.
-     * @param thing
      */
     public void destroyThing(SpaceThing thing) {
         li = spaceThings.listIterator();
@@ -134,14 +123,12 @@ class Game {
     }
 
     /**
-     * This is drawn while gamestate is MENU. Controls, enter to play, etc.
+     * This is drawn while game state is MENU. Controls, enter to play, etc.
      */
     public void drawMenu() {
         canvas.textAlign(PApplet.CENTER);
         canvas.text("BAD ASTEROIDS", canvas.width/2, 40);
 
-        canvas.text("By Zac Stewart", canvas.width/2, 60);
-        canvas.text("zgstewart@gmail.com", canvas.width/2, 75);
 
         canvas.text("Controls:", canvas.width/2, 105);
         canvas.text("W - Accelerate", canvas.width/2, 125);
@@ -156,7 +143,7 @@ class Game {
     }
 
     /**
-     * :( Score, go back to main menu.
+     * game over screen
      */
     public void drawGameOver() {
         canvas.textAlign(PApplet.CENTER);
@@ -288,9 +275,6 @@ class Game {
 
     /**
      * this is used to determine if there is an object at an given x, y pair.
-     * @param xPoint
-     * @param yPoint
-     * @return
      */
     public SpaceThing collisionAtPoint(int xPoint, int yPoint) {
         Rectangle2D ghostShip = new Rectangle2D.Float(canvas.width/2, canvas.height/2, 20, 20);
@@ -312,8 +296,6 @@ class Game {
      * Nested ListIterator loops to check for collisions between object and
      * all other items in the object list. Returns whatever SpaceThing is
      * colliding with object.
-     * @param object
-     * @return SpaceThing
      */
     public SpaceThing getCollision(SpaceThing object) {
         ListIterator it = spaceThings.listIterator();
@@ -337,8 +319,6 @@ class Game {
     /**
      * Key monitor. Maps keys and space keys to corresponding ship
      * methods or game methods depending on gameState.
-     * @param type
-     * @param e
      */
     public void control(String type, KeyEvent e) {
 //        System.out.println(e);

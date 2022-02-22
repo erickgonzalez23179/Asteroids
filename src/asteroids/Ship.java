@@ -2,10 +2,6 @@ package asteroids;
 import java.awt.geom.Rectangle2D;
 import processing.core.*;
 
-/**
- *
- * @author Zachary Stewart
- */
 class Ship extends SpaceThing {
     private boolean accelerating;
     private boolean rotatingLeft;
@@ -23,7 +19,6 @@ class Ship extends SpaceThing {
         bounds = new Rectangle2D.Float(locationX, locationY, size*2, size*2);
     }
 
-    @Override
     public void draw() {
         update();
         super.draw();
@@ -45,12 +40,11 @@ class Ship extends SpaceThing {
         canvas.popMatrix();
     }
 
-    @Override
     public void update() {
         super.update();
         if(accelerating) {
             if (speed < 4) {
-                speed += .1;
+                speed += .0007;
             }
             deltaX += PApplet.cos(PApplet.radians(direction-90)) * 0.1;
             deltaY += PApplet.sin(PApplet.radians(direction-90)) * 0.1;
