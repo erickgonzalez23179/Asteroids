@@ -5,6 +5,7 @@ package asteroids;
 import java.awt.Point;
 import java.awt.event.KeyEvent;
 import java.awt.geom.Rectangle2D;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
@@ -146,6 +147,48 @@ class Game {
      * game over screen
      */
     public void drawGameOver() {
+    	String [][] GameConsoleL = { 
+    			{"  _      \r\n"
+    					+ " | |     \r\n"
+    					+ " | |     \r\n"
+    					+ " | |     \r\n"
+    					+ " | |____ \r\n"
+    					+ " |______|\r\n"
+    					+ "         \r\n"
+    					+ "        "},
+    			{"      _      \r\n"
+    					+ " | |     \r\n"
+    					+ " | |     \r\n"
+    					+ " | |     \r\n"
+    					+ " | |____ \r\n"
+    					+ " |______|\r\n"
+    					+ "        "},
+    			{"      _      \r\n"
+    					+ " | |     \r\n"
+    					+ " | |     \r\n"
+    					+ " | |     \r\n"
+    					+ " | |____ \r\n"
+    					+ " |______|\r\n"
+    					+ "        "},
+    			{"      _      \r\n"
+    					+ " | |     \r\n"
+    					+ " | |     \r\n"
+    					+ " | |     \r\n"
+    					+ " | |____ \r\n"
+    					+ " |______|\r\n"
+    					+ "        "},
+    			{"      _      \r\n"
+    					+ " | |     \r\n"
+    					+ " | |     \r\n"
+    					+ " | |     \r\n"
+    					+ " | |____ \r\n"
+    					+ " |______|\r\n"
+    					+ "        "}
+    	};
+
+    	System.out.println(Arrays.deepToString(GameConsoleL));
+    	    
+    	    
         canvas.textAlign(PApplet.CENTER);
         canvas.text("GAME OVER", canvas.width/2, 40);
 
