@@ -148,13 +148,12 @@ class Game {
      */
     public void drawGameOver() {
     	String [][] GameConsoleL = { 
-    			{"  _      \r\n"
+    			{"      _      \r\n"
     					+ " | |     \r\n"
     					+ " | |     \r\n"
     					+ " | |     \r\n"
     					+ " | |____ \r\n"
     					+ " |______|\r\n"
-    					+ "         \r\n"
     					+ "        "},
     			{"      _      \r\n"
     					+ " | |     \r\n"
